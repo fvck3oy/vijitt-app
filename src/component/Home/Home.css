@@ -1,0 +1,7 @@
+    .each-food{
+        cursor: pointer;
+    }
+    .each-food:hover{
+        /* border: 1px solid #8d8d8d; */
+        box-shadow: 3px 3px 8px -3px #bdbdbd;
+    }

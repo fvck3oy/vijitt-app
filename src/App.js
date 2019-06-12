@@ -11,8 +11,9 @@ export default class App extends Component {
 				<HeaderComponent />
 				<Switch>
 					<Route exact path="/" component={Home} />
+					
 				</Switch>
-				{/* <Footer /> */}
+				<Footer />
 			</Router>
 		)
 	}

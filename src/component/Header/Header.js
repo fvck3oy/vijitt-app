@@ -32,6 +32,10 @@ export default class HeaderComponent extends Component {
 		console.log('key : ', e)
 	}
 
+	componentDidMount(){
+		document.title = "The Vijitt Resort Phuket"
+	  }
+
 	render() {
 		return (
 			<div>
