@@ -45,10 +45,10 @@ export default class HeaderComponent extends Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink href="/components/">Components</NavLink>
+								<NavLink href="/cashier/">Cashier</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+								<NavLink href="/chef/">Chef</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>
