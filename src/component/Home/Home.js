@@ -14,7 +14,9 @@ export default class Home extends Component {
 
 		this.toggle = this.toggle.bind(this)
 	}
-
+	componentDidMount(){
+		document.title = "THE VIJITT RESORT PHUKET"
+	  }
 	toggle(each) {
 		const { toggle } = this.state
 		console.log('Toggle : ', { toggle })
@@ -30,16 +32,16 @@ export default class Home extends Component {
 					<Col md={3}>
 						<div className="">
 							<Card className="m-2 each-food" onClick={() => this.toggle('food1')}>
+							<div>
 								<CardImg
 									top
 									width="100%"
 									src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"
 									alt="Card image cap"
 								/>
+								</div>
 								<CardBody>
-									<CardTitle>Food1</CardTitle>
-									<CardSubtitle>Card subtitle</CardSubtitle>
-									<CardText>n the card title and make up the bulk of the card's content.</CardText>
+									<CardTitle>Starters</CardTitle>
 								</CardBody>
 							</Card>
 						</div>
@@ -54,9 +56,7 @@ export default class Home extends Component {
 									alt="Card image cap"
 								/>
 								<CardBody>
-									<CardTitle>Food2</CardTitle>
-									<CardSubtitle>Card subtitle</CardSubtitle>
-									<CardText>n the card title and make up the bulk of the card's content.</CardText>
+									<CardTitle>Salads</CardTitle>
 								</CardBody>
 							</Card>
 						</div>
@@ -71,9 +71,7 @@ export default class Home extends Component {
 									alt="Card image cap"
 								/>
 								<CardBody>
-									<CardTitle>Food3</CardTitle>
-									<CardSubtitle>Card subtitle</CardSubtitle>
-									<CardText>n the card title and make up the bulk of the card's content.</CardText>
+									<CardTitle>Soups</CardTitle>
 								</CardBody>
 							</Card>
 						</div>
@@ -88,9 +86,7 @@ export default class Home extends Component {
 									alt="Card image cap"
 								/>
 								<CardBody>
-									<CardTitle>Food4</CardTitle>
-									<CardSubtitle>Card subtitle</CardSubtitle>
-									<CardText>n the card title and make up the bulk of the card's content.</CardText>
+									<CardTitle>Pasta</CardTitle>
 								</CardBody>
 							</Card>
 						</div>
@@ -106,9 +102,55 @@ export default class Home extends Component {
 									alt="Card image cap"
 								/>
 								<CardBody>
-									<CardTitle>Food5</CardTitle>
-									<CardSubtitle>Card subtitle</CardSubtitle>
-									<CardText>n the card title and make up the bulk of the card's content.</CardText>
+									<CardTitle>Pizza</CardTitle>
+								</CardBody>
+							</Card>
+						</div>
+					</Col>
+
+					<Col md={3}>
+						<div className="">
+							<Card className="m-2 each-food" onClick={() => this.toggle('food5')}>
+								<CardImg
+									top
+									width="100%"
+									src="http://ew.content.allrecipes.com/sites/default/files/2019-01/eat-variety-healthy-foods-image.jpg"
+									alt="Card image cap"
+								/>
+								<CardBody>
+									<CardTitle>Sandwiches</CardTitle>
+								</CardBody>
+							</Card>
+						</div>
+					</Col>
+
+					<Col md={3}>
+						<div className="">
+							<Card className="m-2 each-food" onClick={() => this.toggle('food5')}>
+								<CardImg
+									top
+									width="100%"
+									src="http://ew.content.allrecipes.com/sites/default/files/2019-01/eat-variety-healthy-foods-image.jpg"
+									alt="Card image cap"
+								/>
+								<CardBody>
+									<CardTitle>Dessert</CardTitle>
+								</CardBody>
+							</Card>
+						</div>
+					</Col>
+
+					<Col md={3}>
+						<div className="">
+							<Card className="m-2 each-food" onClick={() => this.toggle('food5')}>
+								<CardImg
+									top
+									width="100%"
+									src="http://ew.content.allrecipes.com/sites/default/files/2019-01/eat-variety-healthy-foods-image.jpg"
+									alt="Card image cap"
+								/>
+								<CardBody>
+									<CardTitle>Drinks</CardTitle>
 								</CardBody>
 							</Card>
 						</div>

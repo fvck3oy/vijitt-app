@@ -1,0 +1,30 @@
+.contact
+{
+    color: #ffffff;
+    cursor: pointer;
+    padding:5px;
+    margin: 10px;
+}
+.contact:hover
+{
+    color: #c27b13;
+}
+
+.bar{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.archive
+{
+    /* background-color: #c27b13; */
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+.nav 
+{
+    background-color: #fff;
+    /* height: 148px; */
+}

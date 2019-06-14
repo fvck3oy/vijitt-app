@@ -1,14 +1,27 @@
 .each-food {
 	cursor: pointer;
+	overflow: hidden !important;
 }
 .each-food:hover {
-	/* border: 1px solid #8d8d8d; */
-	box-shadow: 3px 3px 8px -3px #bdbdbd;
+	
+	/* box-shadow: 3px 3px 8px -3px #bdbdbd; */
+	overflow: hidden !important;
+	height: ;
+	
 }
 .card-img-top {
 	object-fit: cover;
 	display: block;
 	width: 100vw;
-	height: 100vh;
 	height: 200px;
+	overflow: hidden !important;
+	transition: transform .5s ease;
+}
+.card-img-top:hover {
+	transform: scale(1.15);
+	overflow: hidden !important;
+}
+.card-title{
+	text-align: center;
+	font-weight: bold;
 }
