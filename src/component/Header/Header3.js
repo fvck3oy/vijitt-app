@@ -1,0 +1,34 @@
+
+import React, { Component } from 'react'
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Badge
+} from 'reactstrap'
+import './Header.css'
+export default class Header3 extends Component {
+    render() {
+        return (
+            <div className="fixed-bottom">
+                <div className="d-flex justify-content-end align-items-center p-5" style={{ color: '#c89861' }}>
+                
+                    <div className="">
+                        <div className="archive">
+                            <i className="fas fa-archive  fa-2x" ></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        )
+    }
+}

@@ -6,7 +6,7 @@
 	
 	/* box-shadow: 3px 3px 8px -3px #bdbdbd; */
 	overflow: hidden !important;
-	height: ;
+
 	
 }
 .card-img-top {
@@ -22,6 +22,7 @@
 	overflow: hidden !important;
 }
 .card-title{
+	color: black !important;
 	text-align: center;
 	font-weight: bold;
 }

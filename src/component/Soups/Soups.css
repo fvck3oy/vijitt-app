@@ -1,0 +1,6 @@
+.detail-each-menu{
+    font-size: 18px;
+    /* font-weight: bold; */
+    padding: 20px;
+    flex-direction: column;
+}
