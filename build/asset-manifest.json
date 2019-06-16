@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.15149c75.chunk.css",
+    "main.css": "/static/css/main.91085d24.chunk.css",
     "main.js": "/static/js/main.dab6b598.chunk.js",
     "main.js.map": "/static/js/main.dab6b598.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
@@ -9,10 +9,10 @@
     "static/js/2.67616e74.chunk.js": "/static/js/2.67616e74.chunk.js",
     "static/js/2.67616e74.chunk.js.map": "/static/js/2.67616e74.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c666946d6bc36274f507563a19279cef.js": "/precache-manifest.c666946d6bc36274f507563a19279cef.js",
+    "precache-manifest.97d892ddf79b727ca7db7eb511f96c7c.js": "/precache-manifest.97d892ddf79b727ca7db7eb511f96c7c.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.266e55a5.chunk.css.map": "/static/css/2.266e55a5.chunk.css.map",
-    "static/css/main.15149c75.chunk.css.map": "/static/css/main.15149c75.chunk.css.map",
+    "static/css/main.91085d24.chunk.css.map": "/static/css/main.91085d24.chunk.css.map",
     "static/media/asparagus_soup.jpg": "/static/media/asparagus_soup.12a6a031.jpg",
     "static/media/bbq_chicken_pizza.jpg": "/static/media/bbq_chicken_pizza.51c47f24.jpg",
     "static/media/beef_stroganoff.jpg": "/static/media/beef_stroganoff.5f7f32a5.jpg",
