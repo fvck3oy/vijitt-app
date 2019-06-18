@@ -19,7 +19,7 @@
 .archive
 {
     /* background-color: #c27b13; */
-    color: #d48a1b;
+    color: #d48a1b !important;
     cursor: pointer;
     /* position: absolute; */
     top: 8px;
@@ -32,6 +32,10 @@
 {
     color: #ad6e0e;
 }
+.fa-archive:before {
+    color: #d48a1b;
+}
+
 .nav 
 {
     background-color: #fff;

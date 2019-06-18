@@ -20,6 +20,8 @@ import Dessert from './component/Dessert/Dessert';
 import Drink from './component/Drink/Drink';
 import Header3 from './component/Header/Header3';
 
+import Order from './component/Order/Order'
+
 export default class App extends Component {
 	render() {
 		return (
@@ -43,6 +45,7 @@ export default class App extends Component {
 					<Route exact path="/dessert" component={Dessert} />
 					<Route exact path="/drink" component={Drink} />
 
+					<Route exact path="/order" component={Order} />
 				</Switch>
 				<Footer />
 			</Router>
