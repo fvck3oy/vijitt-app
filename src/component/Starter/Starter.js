@@ -6,6 +6,17 @@ import prawn_tempura from '../../picture/starter/prawn_tempura.jpg'
 import vietnamese_fresh_spring_rolls from '../../picture/starter/vietnamese_fresh_spring_rolls.jpg'
 import { Link } from 'react-router-dom'
 export default class Starter extends Component {
+
+    state = {
+        name: '', value: 0,
+        order: []
+    }
+
+    sentOrder = (e) => {
+        e.preventDefault()
+        console.log('sent');
+
+    }
     render() {
         return (
             <Container className="p-5">
@@ -47,16 +58,15 @@ export default class Starter extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -93,16 +103,15 @@ export default class Starter extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -137,16 +146,16 @@ export default class Starter extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
+
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>

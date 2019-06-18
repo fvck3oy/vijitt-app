@@ -109,16 +109,15 @@ export default class Soups extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
+                          
                             </div>
-
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -154,16 +153,16 @@ export default class Soups extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
+                             
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>

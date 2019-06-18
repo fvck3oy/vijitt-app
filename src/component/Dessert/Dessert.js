@@ -7,6 +7,21 @@ import cream_brulee from '../../picture/dessert/cream_brulee.jpg'
 import the_vijitt_combination from '../../picture/dessert/the_vijitt_combination.jpg'
 import warm_apple_pie from '../../picture/dessert/warm_apple_pie.jpg'
 export default class Dessert extends Component {
+    state  = { }
+    componentDidMount=()=>{
+        var movies = ["Reservoir Dogs", "Pulp Fiction", "Jackie Brown", 
+        "Kill Bill", "Death Proof", "Inglourious Basterds"];
+         
+        // storing our array as a string
+        localStorage.setItem("quentinTarantino", JSON.stringify(movies));
+         
+        // retrieving our data and converting it back into an array
+        var retrievedData = localStorage.getItem("quentinTarantino");
+        var movies2 = JSON.parse(retrievedData);
+         
+        //making sure it still is an array
+        alert(movies2.length);
+    }
     render() {
         return (
             <Container className="p-5">
@@ -46,16 +61,15 @@ export default class Dessert extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
+                          
                             </div>
-
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                 </Col>
@@ -91,16 +105,14 @@ export default class Dessert extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
-
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                 </Col>
@@ -135,16 +147,15 @@ export default class Dessert extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                 </Col>
@@ -180,16 +191,15 @@ export default class Dessert extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                 </Col>

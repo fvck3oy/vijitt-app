@@ -11,8 +11,8 @@ export default class Salads extends Component {
         return (
             <Container className="p-5">
                 <Row className="m-3"><Col>
-                <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
-    <Link to='/'><div style={{ cursor: 'pointer' , color:'black'}}><i className="fas fa-caret-left mr" />  </div></Link>
+                    <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
+                        <Link to='/'><div style={{ cursor: 'pointer', color: 'black' }}><i className="fas fa-caret-left mr" />  </div></Link>
                         <div className="ml-3 mr-3"> |</div> <div>Salads 沙拉 </div>
                     </div>
                 </Col>
@@ -47,16 +47,15 @@ export default class Salads extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -93,16 +92,15 @@ export default class Salads extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -136,16 +134,16 @@ export default class Salads extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
+
                             </div>
 
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -179,16 +177,15 @@ export default class Salads extends Component {
                                     <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
 
-                                <div className="p-2 bd-highlight">
-                                    <Button color="success"><i className="fas fa-check"></i></Button>
-                                </div>
-                            </div>
 
+                            </div>
                             <div className="">
-                                <Form>
+                                <Form onSubmit={this.sentOrder}>
                                     <FormGroup>
                                         Remark <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                    </FormGroup></Form>
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>

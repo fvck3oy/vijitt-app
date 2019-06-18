@@ -11,12 +11,15 @@ import mocktail from '../../picture/drink/mocktail.jpg'
 import soft_drink from '../../picture/drink/soft_drink.jpg'
 
 export default class Drink extends Component {
+    componentDidMount=()=>{
+        localStorage.setItem("order",  JSON.stringify([{name:'kuy' , age:50}]  ));
+    }
     render() {
         return (
             <Container className="p-5">
                 <Row className="m-3"><Col>
-                <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
-                        <Link to='/'><div style={{ cursor: 'pointer' , color:'black'}}><i className="fas fa-caret-left mr" />  </div></Link>
+                    <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
+                        <Link to='/'><div style={{ cursor: 'pointer', color: 'black' }}><i className="fas fa-caret-left mr" />  </div></Link>
                         <div className="ml-3 mr-3"> |</div> <div>Drink 喝 </div>
                     </div>
                 </Col></Row>
@@ -27,7 +30,7 @@ export default class Drink extends Component {
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={soft_drink}  alt="Card image cap"
+                                    src={soft_drink} alt="Card image cap"
                                 />
                             </div>
 
@@ -104,13 +107,18 @@ export default class Drink extends Component {
                                 </div>
 
                                 <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
+                                    <Form>
+                                        <FormGroup>
+                                            Remark <Input type="text" name="email" placeholder="remark" />
+                                        </FormGroup>
+                                        <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                    </Form>
                                 </div>
+
+
+
                             </div>
+
 
                         </div>
                     </Col>
@@ -125,7 +133,7 @@ export default class Drink extends Component {
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={fruit_juice}    alt="Card image cap"
+                                    src={fruit_juice} alt="Card image cap"
                                 />
                             </div>
                         </Card>
@@ -198,27 +206,26 @@ export default class Drink extends Component {
                                         <Button color="primary"><i className="fas fa-plus"></i></Button>
                                     </div>
                                 </div>
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
                 </Row>
 
 
-                       <Row className="p-3">
+                <Row className="p-3">
                     <Col md={4}>
                         <Card className="m-2 each-food">
                             <div>
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={milk_shake}   alt="Card image cap"
+                                    src={milk_shake} alt="Card image cap"
                                 />
                             </div>
                         </Card>
@@ -226,7 +233,7 @@ export default class Drink extends Component {
                     <Col md={8}>
                         <div className="d-flex detail-each-menu">
                             <div style={{ fontWeight: 'bold', fontSize: 24 }}>
-                            Milk Shake 奶昔
+                                Milk Shake 奶昔
                             </div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
@@ -246,13 +253,12 @@ export default class Drink extends Component {
                                         <Button color="primary"><i className="fas fa-plus"></i></Button>
                                     </div>
                                 </div>
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -267,7 +273,7 @@ export default class Drink extends Component {
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={local_beer}   alt="Card image cap"
+                                    src={local_beer} alt="Card image cap"
                                 />
                             </div>
                         </Card>
@@ -275,7 +281,7 @@ export default class Drink extends Component {
                     <Col md={8}>
                         <div className="d-flex detail-each-menu">
                             <div style={{ fontWeight: 'bold', fontSize: 24 }}>
-                            Local Beer 当地啤酒
+                                Local Beer 当地啤酒
                             </div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
@@ -295,14 +301,12 @@ export default class Drink extends Component {
                                         <Button color="primary"><i className="fas fa-plus"></i></Button>
                                     </div>
                                 </div>
-                                
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
                         </div>
                     </Col>
@@ -316,7 +320,7 @@ export default class Drink extends Component {
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={mocktail}  alt="Card image cap"
+                                    src={mocktail} alt="Card image cap"
                                 />
                             </div>
                         </Card>
@@ -324,168 +328,162 @@ export default class Drink extends Component {
                     <Col md={8}>
                         <div className="d-flex detail-each-menu">
                             <div style={{ fontWeight: 'bold', fontSize: 24 }}>
-                            Mocktails非酒精鸡尾酒
+                                Mocktails非酒精鸡尾酒
                             </div>
-                            <div style={{ fontWeight:'bold' , marginTop:30}}>The Vijitt Sunrise</div>
-                          
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Orange juice  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>The Vijitt Sunrise</div>
+
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Orange juice  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
-                                
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
+                            </div>
+                            <Form>
+                                <FormGroup>
+                                    Remark <Input type="text" name="email" placeholder="remark" />
+                                </FormGroup>
+                                <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                            </Form>
+
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Coco Colada</div>
+
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-                                <div style={{ fontWeight:'bold' , marginTop:30}}>Coco Colada</div>
-                               
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Coconut milk  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-                                <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Coconut milk  THB 170</div>
-                                    <div className="d-flex p-2 bd-highlight  align-items-center">
-                                        <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                        <div className="mr-3 ml-3"> 0 </div>
-                                        <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                    </div>
+
+                            <Form>
+                                <FormGroup>
+                                    Remark <Input type="text" name="email" placeholder="remark" />
+                                </FormGroup>
+                                <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                            </Form>
+
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Virgin Mojito</div>
+
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh lemon  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
+                            </div>
 
-
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Brown sugar  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
                                 </div>
-                           
-                                <div style={{ fontWeight:'bold' , marginTop:30}}>Virgin Mojito</div>
-                               
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh lemon  THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            </div>
 
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Brown sugar  THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
-
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf  THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
+                                </div>
+                            </div>
 
 
-                               <div>
-                                   Remark
-                                   <div className="d-flex">
-                                       <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                       <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                   </div>
-                               </div>
+                            <Form>
+                                <FormGroup>
+                                    Remark <Input type="text" name="email" placeholder="remark" />
+                                </FormGroup>
+                                <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                            </Form>
 
-                               <div style={{ fontWeight:'bold' , marginTop:30}}>Honey Kiss Ginger</div>
-                               
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Natural honey  THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Honey Kiss Ginger</div>
 
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh ginger  THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Natural honey  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
+                                </div>
+                            </div>
 
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh ginger  THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
+                                </div>
+                            </div>
 
-                               <div className="d-flex bd-highlight mt-2 mb-2">
-                                   <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf and Ginger ale THB 170</div>
-                                   <div className="d-flex p-2 bd-highlight  align-items-center">
-                                       <Button color="primary"><i className="fas fa-minus"></i></Button>
-                                       <div className="mr-3 ml-3"> 0 </div>
-                                       <Button color="primary"><i className="fas fa-plus"></i></Button>
-                                   </div>
-                               </div>
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
+                                </div>
+                            </div>
 
+                            <div className="d-flex bd-highlight mt-2 mb-2">
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf and Ginger ale THB 170</div>
+                                <div className="d-flex p-2 bd-highlight  align-items-center">
+                                    <Button color="primary"><i className="fas fa-minus"></i></Button>
+                                    <div className="mr-3 ml-3"> 0 </div>
+                                    <Button color="primary"><i className="fas fa-plus"></i></Button>
+                                </div>
+                            </div>
 
-                               <div>
-                                   Remark
-                                   <div className="d-flex">
-                                       <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                       <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                   </div>
-                               </div>
-                            
+                            <Form>
+                                <FormGroup>
+                                    Remark <Input type="text" name="email" placeholder="remark" />
+                                </FormGroup>
+                                <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                            </Form>
+
                         </div>
                     </Col>
                 </Row>
@@ -497,7 +495,7 @@ export default class Drink extends Component {
                                 <CardImg
                                     top
                                     width="100%"
-                                    src={cocktail}  alt="Card image cap"
+                                    src={cocktail} alt="Card image cap"
                                 />
                             </div>
 
@@ -507,9 +505,9 @@ export default class Drink extends Component {
                     <Col md={8}>
                         <div className="d-flex detail-each-menu">
                             <div style={{ fontWeight: 'bold', fontSize: 24 }}>
-                            Cocktail鸡尾酒
+                                Cocktail鸡尾酒
                             </div>
-                            <div style={{ fontWeight:'bold' , marginTop:30}}>Mojito</div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Mojito</div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
                                     <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Havana  THB 250</div>
@@ -547,16 +545,15 @@ export default class Drink extends Component {
                                     </div>
                                 </div>
 
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
 
-                            <div style={{ fontWeight:'bold' , marginTop:30}}>Moscow mule</div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Moscow mule</div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
                                     <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Vodka  THB 250</div>
@@ -594,16 +591,15 @@ export default class Drink extends Component {
                                     </div>
                                 </div>
 
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
 
-                            <div style={{ fontWeight:'bold' , marginTop:30}}>Chi Chi</div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Chi Chi</div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
                                     <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Vodka  THB 250</div>
@@ -641,16 +637,15 @@ export default class Drink extends Component {
                                     </div>
                                 </div>
 
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
 
-                            <div style={{ fontWeight:'bold' , marginTop:30}}>Gin Fizz</div>
+                            <div style={{ fontWeight: 'bold', marginTop: 30 }}>Gin Fizz</div>
                             <div>
                                 <div className="d-flex bd-highlight mt-2 mb-2">
                                     <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Dry gin  THB 250</div>
@@ -678,15 +673,14 @@ export default class Drink extends Component {
                                         <Button color="primary"><i className="fas fa-plus"></i></Button>
                                     </div>
                                 </div>
-                    
 
-                                <div>
-                                    Remark
-                                    <div className="d-flex">
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="remark" />
-                                        <Button color="success" className="ml-2"><i className="fas fa-check"></i></Button>
-                                    </div>
-                                </div>
+
+                                <Form>
+                                    <FormGroup>
+                                        Remark <Input type="text" name="email" placeholder="remark" />
+                                    </FormGroup>
+                                    <Button color="success">Add to cart <i className="fas fa-check"></i></Button>
+                                </Form>
                             </div>
 
 
