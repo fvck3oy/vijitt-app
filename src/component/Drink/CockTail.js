@@ -7,6 +7,8 @@ export default class CockTail extends Component {
     state = { menu_name: '', menu_value: 0, remark: '' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
+
+       
     }
 
     handleInputChange = e => {
@@ -17,9 +19,11 @@ export default class CockTail extends Component {
     }
 
     sentOrder = (e) => {
+        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
+
         console.log('');
-        e.preventDefault()
-        const data = {
+        // e.preventDefault()
+        const newData = {
             // id: this.state.id,
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
@@ -30,18 +34,25 @@ export default class CockTail extends Component {
             // }),
 
         }
-        console.log(' data : ', data);
+        oldItems.push(newData);
+        localStorage.setItem('order', JSON.stringify(oldItems));
+        console.log(' data : ', newData);
     }
-    minus = () => {
-        console.log('value : ', this.state.menu_value);
 
+  
+
+
+    minus = () => {
+        
         if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
+        console.log('value : ', this.state.menu_value);
 
     }
     plus = () => {
-        console.log('value : ', this.state.menu_value);
+        
         this.setState({ menu_value: this.state.menu_value + 1 })
+        console.log('value2 : ', this.state.menu_value);
     }
     render() {
         return (
@@ -75,21 +86,21 @@ export default class CockTail extends Component {
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh lemon</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh Lemon</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint Leaf</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Brown sugar</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Brown Sugar</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
@@ -108,21 +119,21 @@ export default class CockTail extends Component {
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh ginger</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh Ginger</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon wedg</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon Wedge</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Ginger al</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Ginger Ale</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
@@ -148,14 +159,14 @@ export default class CockTail extends Component {
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juic</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Coconut mil</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Coconut milk</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
@@ -174,14 +185,14 @@ export default class CockTail extends Component {
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Triple se</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Triple sec</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
                                 </div>
 
                                 <div className="d-flex bd-highlight mt-2 mb-2">
-                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon juice and sod</div>
+                                    <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon juice and soda</div>
                                     <div className="d-flex p-2 bd-highlight  align-items-center">
                                         THB 250
                                     </div>
@@ -194,13 +205,25 @@ export default class CockTail extends Component {
                                             <Label for="exampleSelect">Select</Label>
                                             <Input type="select" name='menu_name' value={this.state.menu_name} id="exampleSelect" onChange={this.handleInputChange} required>
                                                 <option value="">Please Select</option>
-                                                <option value="coke">Coke</option>
-                                                <option value="sprite">Sprite</option>
-                                                <option value="soda_water">Soda Water</option>
-                                                <option value="fanta">Fanta</option>
-                                                <option value="ginger_ale">Ginger Ale</option>
-                                                <option value="tonic_water">Tonic Water</option>
-                                                <option value="coke_light">Coke Light</option>
+
+                                                <option value="mojito_havana">Mojito Havana</option>
+                                                <option value="mojito_fresh_lamon">Mojito Fresh Lemon</option>
+                                                <option value="mojito_mint_leaf">Mojito Mint Leaf</option>
+                                                <option value="mojito_brown_sugar">Mojito Brown Sugar</option>
+
+                                                <option value="moscow_mule_vodka">Moscow Mule Vodka</option>
+                                                <option value="moscow_mule_fresh_ginger">Moscow Mule Fresh Lemon</option>
+                                                <option value="moscow_mule_lemon_wedge">Moscow MuleLemon Wedge</option>
+                                                <option value="moscow_mule_ginger_ale">Moscow Mule Ginger Ale</option>
+
+                                                <option value="chi_chi_vodka">Chi ChiVodka</option>
+                                                <option value="chi_chi_malibu">Chi Chi Malibu</option>
+                                                <option value="chi_chi_pineapple_juice">Chi Chi Pineapple Juice</option>
+                                                <option value="chi_chi_coconut_milk">Chi Chi Coconut Milk</option>
+
+                                                <option value="gin_fizz_dry_gin">Gin Fizz Dry Gin</option>
+                                                <option value="gin_fizz_triple_sec">Gin Fizz Triple Sec</option>
+                                                <option value="gin_fizz_lemon_juice_and_soda">Gin Fizz Lemon Juice and Soda</option>
                                             </Input>
                                         </FormGroup>
                                         <div className="mb-2">

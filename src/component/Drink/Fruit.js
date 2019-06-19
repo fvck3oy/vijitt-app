@@ -8,6 +8,8 @@ export default class Fruit extends Component {
     state = { menu_name: '', menu_value: 0, remark: '' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
+
+       
     }
 
     handleInputChange = e => {
@@ -18,9 +20,11 @@ export default class Fruit extends Component {
     }
 
     sentOrder = (e) => {
+        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
+
         console.log('');
-        e.preventDefault()
-        const data = {
+        // e.preventDefault()
+        const newData = {
             // id: this.state.id,
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
@@ -31,18 +35,25 @@ export default class Fruit extends Component {
             // }),
 
         }
-        console.log(' data : ', data);
+        oldItems.push(newData);
+        localStorage.setItem('order', JSON.stringify(oldItems));
+        console.log(' data : ', newData);
     }
-    minus = () => {
-        console.log('value : ', this.state.menu_value);
 
+  
+
+
+    minus = () => {
+        
         if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
+        console.log('value : ', this.state.menu_value);
 
     }
     plus = () => {
-        console.log('value : ', this.state.menu_value);
+        
         this.setState({ menu_value: this.state.menu_value + 1 })
+        console.log('value2 : ', this.state.menu_value);
     }
     render() {
         return (
@@ -122,13 +133,13 @@ export default class Fruit extends Component {
                                             <Label for="exampleSelect">Select</Label>
                                             <Input type="select" name='menu_name' value={this.state.menu_name} id="exampleSelect" onChange={this.handleInputChange} required>
                                                 <option value="">Please Select</option>
-                                                <option value="coke">Coke</option>
-                                                <option value="sprite">Sprite</option>
-                                                <option value="soda_water">Soda Water</option>
-                                                <option value="fanta">Fanta</option>
-                                                <option value="ginger_ale">Ginger Ale</option>
-                                                <option value="tonic_water">Tonic Water</option>
-                                                <option value="coke_light">Coke Light</option>
+                                                <option value="apple">Apple</option>
+                                                <option value="guava">Guava</option>
+                                                <option value="lemon">Lemon</option>
+                                                <option value="mango">Mango</option>
+                                                <option value="orange">Orange</option>
+                                                <option value="pineapple">Pineapple</option>
+                                                <option value="water_melon">Water Melon</option>
                                             </Input>
                                         </FormGroup>
 
@@ -138,7 +149,7 @@ export default class Fruit extends Component {
                                              <button type="button" className="btn-value ml-2" onClick={this.plus}><i className="fas fa-plus"></i></button>
                                         </div>
                                         <FormGroup>
-                                            Remark <Input type="text" name="remark" value={this.state.remark} placeholder="remark" onChange={this.handleInputChange} required />
+                                            Remark <Input type="text" name="remark" value={this.state.remark} placeholder="remark" onChange={this.handleInputChange}  />
                                         </FormGroup>
 
                                         <Button color="success">Add to cart <i className="fas fa-check"></i></Button>

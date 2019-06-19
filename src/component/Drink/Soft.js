@@ -7,6 +7,8 @@ export default class Soft extends Component {
     state = { menu_name: '', menu_value: 0, remark: '' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
+
+       
     }
 
     handleInputChange = e => {
@@ -17,9 +19,11 @@ export default class Soft extends Component {
     }
 
     sentOrder = (e) => {
+        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
+
         console.log('');
-        e.preventDefault()
-        const data = {
+        // e.preventDefault()
+        const newData = {
             // id: this.state.id,
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
@@ -30,18 +34,25 @@ export default class Soft extends Component {
             // }),
 
         }
-        console.log(' data : ', data);
+        oldItems.push(newData);
+        localStorage.setItem('order', JSON.stringify(oldItems));
+        console.log(' data : ', newData);
     }
-    minus = () => {
-        console.log('value : ', this.state.menu_value);
 
+  
+
+
+    minus = () => {
+        
         if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
+        console.log('value : ', this.state.menu_value);
 
     }
     plus = () => {
-        console.log('value : ', this.state.menu_value);
+        
         this.setState({ menu_value: this.state.menu_value + 1 })
+        console.log('value2 : ', this.state.menu_value);
     }
     render() {
         return (
@@ -134,9 +145,9 @@ export default class Soft extends Component {
                                             Value <Input type="number" name="menu_value" value={this.state.menu_value} placeholder="menu_value" onChange={this.handleInputChange} required />
                                         </FormGroup> */}
                                         <div className="mb-2">
-                                            <button type="button" className="btn-value mr-2" onClick={this.minus}><i className="fas fa-minus"></i></button> 
+                                            <button type="button" className="btn-value mr-2" onClick={this.minus}><i className="fas fa-minus"></i></button>
                                             {this.state.menu_value}
-                                             <button type="button" className="btn-value ml-2" onClick={this.plus}><i className="fas fa-plus"></i></button>
+                                            <button type="button" className="btn-value ml-2" onClick={this.plus}><i className="fas fa-plus"></i></button>
                                         </div>
                                         <FormGroup>
                                             Remark <Input type="text" name="remark" value={this.state.remark} placeholder="remark" onChange={this.handleInputChange} />

@@ -8,6 +8,8 @@ export default class MockTail extends Component {
     state = { menu_name: '', menu_value: 0, remark: '' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
+
+       
     }
 
     handleInputChange = e => {
@@ -18,9 +20,11 @@ export default class MockTail extends Component {
     }
 
     sentOrder = (e) => {
+        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
+
         console.log('');
-        e.preventDefault()
-        const data = {
+        // e.preventDefault()
+        const newData = {
             // id: this.state.id,
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
@@ -31,18 +35,25 @@ export default class MockTail extends Component {
             // }),
 
         }
-        console.log(' data : ', data);
+        oldItems.push(newData);
+        localStorage.setItem('order', JSON.stringify(oldItems));
+        console.log(' data : ', newData);
     }
-    minus = () => {
-        console.log('value : ', this.state.menu_value);
 
+  
+
+
+    minus = () => {
+        
         if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
+        console.log('value : ', this.state.menu_value);
 
     }
     plus = () => {
-        console.log('value : ', this.state.menu_value);
+        
         this.setState({ menu_value: this.state.menu_value + 1 })
+        console.log('value2 : ', this.state.menu_value);
     }
     render() {
         return (
@@ -144,28 +155,28 @@ export default class MockTail extends Component {
                             <div style={{ fontWeight: 'bold', marginTop: 30 }}>Honey Kiss Ginger</div>
 
                             <div className="d-flex bd-highlight mt-2 mb-2">
-                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Natural honey</div>
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Natural Honey</div>
                               <div className="d-flex p-2 bd-highlight  align-items-center">
                                   THB 170
                                     </div>
                             </div>
 
                             <div className="d-flex bd-highlight mt-2 mb-2">
-                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh ginger</div>
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh Ginger</div>
                               <div className="d-flex p-2 bd-highlight  align-items-center">
                                   THB 170
                                     </div>
                             </div>
 
                             <div className="d-flex bd-highlight mt-2 mb-2">
-                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemo</div>
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon</div>
                               <div className="d-flex p-2 bd-highlight  align-items-center">
                                   THB 170
                                     </div>
                             </div>
 
                             <div className="d-flex bd-highlight mt-2 mb-2">
-                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf and Ginger al</div>
+                                <div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf and Ginger ale</div>
                               <div className="d-flex p-2 bd-highlight  align-items-center">
                                   THB 170
                                     </div>
@@ -179,13 +190,22 @@ export default class MockTail extends Component {
                                             <Label for="exampleSelect">Select</Label>
                                             <Input type="select" name='menu_name' value={this.state.menu_name} id="exampleSelect" onChange={this.handleInputChange} required>
                                                 <option value="">Please Select</option>
-                                                <option value="coke">Coke</option>
-                                                <option value="sprite">Sprite</option>
-                                                <option value="soda_water">Soda Water</option>
-                                                <option value="fanta">Fanta</option>
-                                                <option value="ginger_ale">Ginger Ale</option>
-                                                <option value="tonic_water">Tonic Water</option>
-                                                <option value="coke_light">Coke Light</option>
+                                                <option value="the_vijitt_sunrise_orange_juice">The Vijitt Sunrise Orange Juice</option>
+                                                <option value="the_vijitt_sunrise_pineapple_juice">The Vijitt Sunrise Pineapple Juice</option>
+                                                <option value="the_vijitt_sunrise_mango_juice">The Vijitt Sunrise Mango Juice</option>
+
+                                                <option value="coco_colada_pineapple_juice">Coco Colada Pineapple Juice</option>
+                                                <option value="coco_colada_mango_juice">Coco Colada Mango Juice</option>
+                                                <option value="coco_colada_coconut_juice">Coco Colada Coconut Juice</option>
+
+                                                <option value="virgin_mojito_fresh_lemon">Virgir Mojito Fresh Lemon</option>
+                                                <option value="virgin_mojito_brown_sugar">Virgir Mojito Brown Sugar</option>
+                                                <option value="virgin_mojito_mint_leaf">Virgir Mojito Mint Leaf</option>
+
+                                                <option value="honey_kiss_ginger_natural_honey">Honey Kiss Ginger Natural Honey</option>
+                                                <option value="honey_kiss_ginger_fresh_ginger">Honey Kiss Ginger Fresh Ginger</option>
+                                                <option value="honey_kiss_ginger_lemon">Honey Kiss Ginger Lemon</option>
+                                                <option value="honey_kiss_ginger_mint_leaf_and_ginger_ale">Honey Kiss Ginger Mint Leaf and Ginger ale</option>
                                             </Input>
                                         </FormGroup>
 
