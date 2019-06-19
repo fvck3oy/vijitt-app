@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Form, FormGroup, Input, Label, Table } from 'reactstrap'
+import { Link } from 'react-router-dom'
 export default class Order extends Component {
     state = {
-        order: [] ,username:'' , room:''
+        order: [], username: '', room: ''
     }
     componentDidMount = () => {
         let order = JSON.parse(localStorage.getItem('order'));
@@ -18,33 +19,139 @@ export default class Order extends Component {
     }
 
     sentOrder = (e) => {
-    console.log('sent to DB !')
-    e.preventDefault();
+        console.log('sent to DB !')
+        e.preventDefault();
+    }
+
+    clear = () => {
+        localStorage.clear()
+        let order = JSON.parse(localStorage.getItem('order'));
+        console.log('check order : ', order);
+        this.setState({ order: order })
     }
 
 
+
+    toRemove = (index) => {
+
+        console.log('index is ', index);
+        const order = this.state.order
+        const afterObject = order.filter((o, i) => i !== index)
+        console.log('after : ', afterObject);
+        localStorage.setItem('order', JSON.stringify(afterObject));
+        this.getData()
+
+    }
+    getData = () => {
+        let order = JSON.parse(localStorage.getItem('order'));
+        this.setState({ order: order })
+    }
+
+    renderTableHeader() {
+
+        return this.state.order.map((e, index) => {
+            return <tr key={index + 1}>
+                <th scope="row">{index + 1}</th>
+                <td>{e.menu_name}</td>
+                <td style={{ textAlign: 'center' }}>{e.menu_value}</td>
+                <td> <Button type='button' color="danger" onClick={() => this.toRemove(index)}><i className="fas fa-times" /></Button></td>
+            </tr>
+        })
+    }
+
     render() {
-        return (
-            <div className="p-5">
+        if (this.state.order === null || this.state.order === []) {
+            return (
 
-                <div className="pb-5">
-                    <h1>My Order</h1>
-                    {this.state.order.map((e, index) =>
-                        <div key={index}>{e.menu_name}  : {e.menu_value} จำนวน</div>)}
+                <Container className="p-5">
+                    <Row className="m-3"><Col>
+                        <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
+                            <Link to='/'><div style={{ cursor: 'pointer', color: 'black' }}><i className="fas fa-caret-left mr" />  </div></Link>
+                            <div className="ml-3 mr-3"> |</div> <div> Order </div>
+                        </div>
+                        <div className="p-5">
+                            <div className="pb-5" style={{ color: 'red' }}>
+                                <h1>Order Empty . . .</h1>
+                            </div>
+                        </div>
+                    </Col>
+                    </Row>
+                </Container>
 
-                </div>
-                <h1>Address</h1>
-                <Form onSubmit={this.sentOrder}>
-                    <FormGroup>
-                        Name  <Input type="text" name="username" value={this.state.username} placeholder="please fill your name" onChange={this.handleInputChange} required />
-                    </FormGroup>
-                    <FormGroup>
-                        Room No  <Input type="text" name="room" value={this.state.room} placeholder="please fill your room" onChange={this.handleInputChange} required />
-                    </FormGroup>
-                    <Button color="success">Confirm Order <i className="fas fa-check"></i></Button>
-                </Form>
+            )
+        }
+        else {
+            return (
 
-            </div>
-        )
+                <Container className="">
+                    <Row className="m-3">
+                        <Col>
+                        <div style={{ fontWeight: '', fontSize: 48 }} className="d-flex">
+                            <Link to='/'><div style={{ cursor: 'pointer', color: 'black' }}><i className="fas fa-caret-left mr" />  </div></Link>
+                            <div className="ml-3 mr-3"> |</div> <div> Order </div>
+                        </div>
+                        <div className="">
+
+                            <div className="pt-5 pb-5">
+                                <h3>My Order</h3>
+                                <Table hover className="table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>OrderName</th>
+                                            <th>Amount</th>
+                                            <th>{''}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {this.renderTableHeader()}
+                                    </tbody>
+                                </Table>
+                                {/* {this.state.order.map((e, index) =>
+                                    <div key={index}>{e.menu_name}  : {e.menu_value} จำนวน 
+                                    <Button type='button' color="primary" onClick={()=>this.toRemove(index)}>REMOVE</Button>
+                                    
+                                    </div>)} */}
+
+                                {/* <Button color='danger' onClick={this.clear} className="mt-2">Clear Order <i className="fas fa-times" /></Button> */}
+                            </div>
+                        </div>
+                    </Col>
+                    </Row>
+
+                    <Row className="m-3">
+                        <Col md={4} offset={4}>
+                        <div className="pb-5">
+                            <h1>Address</h1>
+                            <Form onSubmit={this.sentOrder}>
+                                <FormGroup>
+                                    Name  <Input type="text" name="username" value={this.state.username} placeholder="please fill your name" onChange={this.handleInputChange} required />
+                                </FormGroup>
+                                <FormGroup>
+                                    Room No  <Input type="text" name="room" value={this.state.room} placeholder="please fill your room" onChange={this.handleInputChange} required />
+                                </FormGroup>
+                                <Button color="success">Confirm Order <i className="fas fa-check" /></Button>
+                            </Form>
+                        </div>
+                    </Col>
+                    </Row>
+
+
+
+                    <Row className="m-3">
+                        <Col>
+                        <div className="pb-3 d-flex justify-content-center items-align-center">
+                            <h3>* Contact Room Service 405 <i class="fas fa-phone fa-1x"/></h3>
+                     
+                        </div>
+                    </Col>
+                    </Row>
+                </Container>
+
+
+
+
+            )
+        }
     }
 }
