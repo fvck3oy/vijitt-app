@@ -77,7 +77,7 @@ export default class OfDay extends Component {
         var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 
         console.log('');
-        // e.preventDefault()
+        e.preventDefault()
         const newData = {
             // id: this.state.id,
             menu_name: this.state.menu_name,
@@ -92,6 +92,8 @@ export default class OfDay extends Component {
         oldItems.push(newData);
         localStorage.setItem('order', JSON.stringify(oldItems));
         console.log(' data : ', newData);
+        this.setState({ menu_value: 0 })
+		this.setState({ remark: '' })
     }
 
   
