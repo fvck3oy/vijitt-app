@@ -53,6 +53,7 @@ export default class CockTail extends Component {
             oldItems.push(newData);
             localStorage.setItem('order', JSON.stringify(oldItems));
             console.log(' data : ', newData);
+			this.setState({ menu_name: '' })
             this.setState({ menu_value: 0 })
             this.setState({ remark: '' })
         }else{

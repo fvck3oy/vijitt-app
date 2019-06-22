@@ -25,12 +25,17 @@ export default class Soft extends Component {
 	}
 
 	handleInputChange = e => {
-        const { name, value } = e.target
-        this.setState({ [name]: value })
-        this.setState({ please: '' })
-        console.log({ [name]: value })
-    }
+		const { name, value } = e.target
 
+		this.setState({ [name]: value })
+		this.setState({ please: '' })
+		if (value === 'Coke' || value === 'Sprite' || value === 'Soda Water' || value === 'Fanta') {
+			this.setState({ price: 80 })
+		} else {
+			this.setState({ price: 90 })
+		}
+		console.log({ [name]: value })
+	}
     sentOrder = (e) => {
         e.preventDefault()
         if(this.state.menu_value>=1){
@@ -53,7 +58,8 @@ export default class Soft extends Component {
             oldItems.push(newData);
             localStorage.setItem('order', JSON.stringify(oldItems));
             console.log(' data : ', newData);
-            this.setState({ menu_value: 0 })
+			this.setState({ menu_value: 0 })
+			this.setState({ menu_name: '' })
             this.setState({ remark: '' })
         }else{
                     this.setState({ please:'please add amount'})

@@ -53,7 +53,8 @@ export default class MockTail extends Component {
             oldItems.push(newData);
             localStorage.setItem('order', JSON.stringify(oldItems));
             console.log(' data : ', newData);
-            this.setState({ menu_value: 0 })
+			this.setState({ menu_value: 0 })
+			this.setState({ menu_name: '' })
             this.setState({ remark: '' })
         }else{
                     this.setState({ please:'please add amount'})
