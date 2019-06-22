@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle ,Form , FormGroup , Input } from 'reactstrap'
 import './Pasta.css'
 import { Link } from 'react-router-dom'
-import spaghetti_with_baby_squid from '../../picture/pasta/spaghetti_with_baby_squid.jpg'
-import beef_stroganoff from '../../picture/pasta/beef_stroganoff.jpg'
 import Beef from './Beef';
 import Spaghetti from './Spaghetti';
 export default class Pasta extends Component {

@@ -11,7 +11,7 @@ import potato_soup from '../../picture/soups/potato_soup.jpg'
 import pumpkin_soup from '../../picture/soups/pumpkin_soup .jpg'
 export default class OfDay extends Component {
     state = {
-        toDay: '',picToday:'',menu_name: '', menu_value: 1, remark: '', price:230    }
+        toDay: '',picToday:'',menu_name: '', menu_value: 0, remark: '', price:230  , please:''  }
     componentDidMount = () => {
         var today = moment().format('dddd');
         this.setState({toDay : today})
@@ -68,47 +68,55 @@ export default class OfDay extends Component {
     handleInputChange = e => {
         const { name, value } = e.target
         this.setState({ [name]: value })
-        this.setState({ message: '' })
+        this.setState({ please: '' })
         console.log({ [name]: value })
     }
 
     sentOrder = (e) => {
-        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
-
-        console.log('');
         e.preventDefault()
-        const newData = {
-            // id: this.state.id,
-            menu_name: this.state.menu_name,
-            menu_value: this.state.menu_value,
-            remark: this.state.remark,
-            price:this.state.price
-            // lesson: this.state.tags.map($objTag => {
-            // 	return { name: $objTag.name }
-            // }),
+        if(this.state.menu_value>=1){
+            var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 
+            console.log('');
+            
+            const newData = {
+                // id: this.state.id,
+                menu_name: this.state.menu_name,
+                menu_value: this.state.menu_value,
+                remark: this.state.remark,
+                price: this.state.price
+    
+                // lesson: this.state.tags.map($objTag => {
+                // 	return { name: $objTag.name }
+                // }),
+    
+            }
+            oldItems.push(newData);
+            localStorage.setItem('order', JSON.stringify(oldItems));
+            console.log(' data : ', newData);
+            this.setState({ menu_value: 0 })
+            this.setState({ remark: '' })
+        }else{
+                    this.setState({ please:'please add amount'})
         }
-        oldItems.push(newData);
-        localStorage.setItem('order', JSON.stringify(oldItems));
-        console.log(' data : ', newData);
-        this.setState({ menu_value: 0 })
-		this.setState({ remark: '' })
+       
     }
 
-  
+
 
 
     minus = () => {
-        
-        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
+
+        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
-
+        this.setState({ please: '' })
     }
     plus = () => {
-        
+
         this.setState({ menu_value: this.state.menu_value + 1 })
         console.log('value2 : ', this.state.menu_value);
+        this.setState({ please: '' })
     }
     render() {
         return (
@@ -154,7 +162,7 @@ export default class OfDay extends Component {
                                 </div>
 
                             </div>
-
+                            <div style={{ color:'red'}}>{this.state.please}</div>
                             <div className="">
                                 <Form onSubmit={this.sentOrder}>
                                 <FormGroup>

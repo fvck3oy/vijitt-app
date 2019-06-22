@@ -4,7 +4,7 @@ import './Starter.css'
 
 import vietnamese_fresh_spring_rolls from '../../picture/starter/vietnamese_fresh_spring_rolls.jpg'
 export default class Vietnamese extends Component {
-    state = { menu_name: 'vietnamese_fresh_spring_rolls', menu_value: 1, remark: '',price:250 }
+    state = { menu_name: 'vietnamese_fresh_spring_rolls', menu_value: 0, remark: '',price:250 , please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -14,48 +14,55 @@ export default class Vietnamese extends Component {
     handleInputChange = e => {
         const { name, value } = e.target
         this.setState({ [name]: value })
-        this.setState({ message: '' })
+        this.setState({ please: '' })
         console.log({ [name]: value })
     }
 
     sentOrder = (e) => {
-        var oldItems = JSON.parse(localStorage.getItem('order')) || [];
-
-        console.log('');
         e.preventDefault()
-        const newData = {
-            // id: this.state.id,
-            menu_name: this.state.menu_name,
-            menu_value: this.state.menu_value,
-            remark: this.state.remark,
-            price:this.state.price
+        if(this.state.menu_value>=1){
+            var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 
-            // lesson: this.state.tags.map($objTag => {
-            // 	return { name: $objTag.name }
-            // }),
-
+            console.log('');
+            
+            const newData = {
+                // id: this.state.id,
+                menu_name: this.state.menu_name,
+                menu_value: this.state.menu_value,
+                remark: this.state.remark,
+                price: this.state.price
+    
+                // lesson: this.state.tags.map($objTag => {
+                // 	return { name: $objTag.name }
+                // }),
+    
+            }
+            oldItems.push(newData);
+            localStorage.setItem('order', JSON.stringify(oldItems));
+            console.log(' data : ', newData);
+            this.setState({ menu_value: 0 })
+            this.setState({ remark: '' })
+        }else{
+                    this.setState({ please:'please add amount'})
         }
-        oldItems.push(newData);
-        localStorage.setItem('order', JSON.stringify(oldItems));
-        console.log(' data : ', newData);
-        this.setState({ menu_value: 0 })
-		this.setState({ remark: '' })
+       
     }
 
-  
+
 
 
     minus = () => {
-        
-        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
+
+        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
-
+        this.setState({ please: '' })
     }
     plus = () => {
-        
+
         this.setState({ menu_value: this.state.menu_value + 1 })
         console.log('value2 : ', this.state.menu_value);
+        this.setState({ please: '' })
     }
     render() {
         return (
@@ -91,7 +98,7 @@ export default class Vietnamese extends Component {
 
 
                             </div>
-
+                            <div style={{ color:'red'}}>{this.state.please}</div>
                             <div className="">
                                 <Form onSubmit={this.sentOrder}>
                                 <FormGroup>

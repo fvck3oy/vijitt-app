@@ -18,52 +18,64 @@ import {
 import './Starter.css'
 import tuna_sashimi from '../../picture/starter/tuna_sashimi.jpg'
 export default class Tuna extends Component {
-	state = { menu_name: 'tuna_sashimi', menu_value: 1, remark: '', price:250 }
+	state = { menu_name: 'tuna_sashimi', menu_value: 0, remark: '', price:250 , please:'' }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
 
 	handleInputChange = e => {
-		const { name, value } = e.target
-		this.setState({ [name]: value })
-		this.setState({ message: '' })
-		console.log({ [name]: value })
-	}
+        const { name, value } = e.target
+        this.setState({ [name]: value })
+        this.setState({ please: '' })
+        console.log({ [name]: value })
+    }
 
-	sentOrder = e => {
-		var oldItems = JSON.parse(localStorage.getItem('order')) || []
+    sentOrder = (e) => {
+        e.preventDefault()
+        if(this.state.menu_value>=1){
+            var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 
-		console.log('')
-		e.preventDefault()
-		const newData = {
-			// id: this.state.id,
-			menu_name: this.state.menu_name,
-			menu_value: this.state.menu_value,
-			remark: this.state.remark,
-			price:this.state.price
-			// lesson: this.state.tags.map($objTag => {
-			// 	return { name: $objTag.name }
-			// }),
-		}
-		oldItems.push(newData)
-		localStorage.setItem('order', JSON.stringify(oldItems))
-		console.log(' data : ', newData)
-		this.setState({ menu_value: 0 })
-		this.setState({ remark: '' })
-	}
+            console.log('');
+            
+            const newData = {
+                // id: this.state.id,
+                menu_name: this.state.menu_name,
+                menu_value: this.state.menu_value,
+                remark: this.state.remark,
+                price: this.state.price
+    
+                // lesson: this.state.tags.map($objTag => {
+                // 	return { name: $objTag.name }
+                // }),
+    
+            }
+            oldItems.push(newData);
+            localStorage.setItem('order', JSON.stringify(oldItems));
+            console.log(' data : ', newData);
+            this.setState({ menu_value: 0 })
+            this.setState({ remark: '' })
+        }else{
+                    this.setState({ please:'please add amount'})
+        }
+       
+    }
 
-	minus = () => {
-		if (this.state.menu_value <= 1) {
-			this.setState({ menu_value: 1 })
-		} else {
-			this.setState({ menu_value: this.state.menu_value - 1 })
-		}
-		console.log('value : ', this.state.menu_value)
-	}
-	plus = () => {
-		this.setState({ menu_value: this.state.menu_value + 1 })
-		console.log('value2 : ', this.state.menu_value)
-	}
+
+
+
+    minus = () => {
+
+        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        else { this.setState({ menu_value: this.state.menu_value - 1 }) }
+        console.log('value : ', this.state.menu_value);
+        this.setState({ please: '' })
+    }
+    plus = () => {
+
+        this.setState({ menu_value: this.state.menu_value + 1 })
+        console.log('value2 : ', this.state.menu_value);
+        this.setState({ please: '' })
+    }
 	render() {
 		return (
 			<div>
@@ -93,7 +105,7 @@ export default class Tuna extends Component {
 									</div>
 								</div>
 							</div>
-
+							<div style={{ color:'red'}}>{this.state.please}</div>
 							<div className="">
 								<Form onSubmit={this.sentOrder}>
 									<FormGroup>
