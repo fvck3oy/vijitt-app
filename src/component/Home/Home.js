@@ -25,7 +25,17 @@ export default class Home extends Component {
 		this.toggle = this.toggle.bind(this)
 	}
 	componentDidMount() {
-		document.title = "THE VIJITT RESORT PHUKET"
+		document.title = 'THE VIJITT RESORT PHUKET'
+		// var oldItems = []
+		var oldItems = JSON.parse(localStorage.getItem('order')) || []
+		if (oldItems !== null) {
+			
+		} else {
+			var oldItems = []
+
+			localStorage.setItem('order', JSON.stringify(oldItems))
+		}
+		// var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 	}
 	toggle(each) {
 		const { toggle } = this.state
@@ -34,23 +44,20 @@ export default class Home extends Component {
 		this.setState({ food: each })
 		console.log('After Food : ', each)
 	}
-	
+
 	render() {
 		return (
 			<Container className="p-5">
-				<Row className="m-3" style={{ fontFamily:'Parisienne'  , fontWeight:'' , fontSize:48 }}>Room Service</Row>
+				<Row className="m-3" style={{ fontFamily: 'Parisienne', fontWeight: '', fontSize: 48 }}>
+					Room Service
+				</Row>
 				<Row>
 					<Col md={3}>
 						<div className="">
 							<Link to={'starter'}>
 								<Card className="m-2 each-food">
 									<div>
-										<CardImg
-											top
-											width="100%"
-											src={tuna_sashimi}
-											alt="Card image cap"
-										/>
+										<CardImg top width="100%" src={tuna_sashimi} alt="Card image cap" />
 									</div>
 									<CardBody>
 										<CardTitle>Starters</CardTitle>
@@ -61,125 +68,89 @@ export default class Home extends Component {
 					</Col>
 					<Col md={3}>
 						<div className="">
-						<Link to={'salads'}>
-							<Card className="m-2 each-food">
-								<CardImg
-									top
-									width="100%"
-									src={caesar_salad}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Salads</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'salads'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={caesar_salad} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Salads</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 					<Col md={3}>
 						<div className="">
-						<Link to={'soups'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={tomato_soup}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Soups</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'soups'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={tomato_soup} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Soups</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 					<Col md={3}>
 						<div className="">
-						<Link to={'pasta'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={spaghetti_with_baby_squid}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Pasta</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'pasta'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={spaghetti_with_baby_squid} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Pasta</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 
 					<Col md={3}>
 						<div className="">
-						<Link to={'pizza'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={vegetarian_pizza}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Pizza</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'pizza'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={vegetarian_pizza} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Pizza</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 
 					<Col md={3}>
 						<div className="">
-						<Link to={'sandwiches'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={the_vijitt_cheese_burger}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Sandwiches</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'sandwiches'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={the_vijitt_cheese_burger} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Sandwiches</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 
 					<Col md={3}>
 						<div className="">
-
-						<Link to={'dessert'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={mango_cheese_cake}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Dessert</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'dessert'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={mango_cheese_cake} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Dessert</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
 
 					<Col md={3}>
 						<div className="">
-						<Link to={'drink'}>
-							<Card className="m-2 each-food" >
-								<CardImg
-									top
-									width="100%"
-									src={cocktail}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<CardTitle>Drinks</CardTitle>
-								</CardBody>
-							</Card>
+							<Link to={'drink'}>
+								<Card className="m-2 each-food">
+									<CardImg top width="100%" src={cocktail} alt="Card image cap" />
+									<CardBody>
+										<CardTitle>Drinks</CardTitle>
+									</CardBody>
+								</Card>
 							</Link>
 						</div>
 					</Col>
