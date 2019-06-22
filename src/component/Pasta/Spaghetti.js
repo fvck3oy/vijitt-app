@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pasta.css'
 import beef_stroganoff from '../../picture/pasta/beef_stroganoff.jpg'
 export default class Spaghetti extends Component {
-    state = { menu_name: 'spaghetti_pasta', menu_value: 0, remark: '' }
+    state = { menu_name: 'spaghetti_pasta', menu_value: 0, remark: '',price:290 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -27,7 +27,7 @@ export default class Spaghetti extends Component {
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
             remark: this.state.remark,
-
+            price:this.state.price
             // lesson: this.state.tags.map($objTag => {
             // 	return { name: $objTag.name }
             // }),

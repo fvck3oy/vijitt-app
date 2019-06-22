@@ -4,23 +4,23 @@ import HeaderComponent from './component/Header/Header'
 
 import Header2 from './component/Header/Header2'
 
-
 import Home from './component/Home/Home'
 import Cashier from './component/Cashier/Cashier'
-import Chef from './component/Chef/Chef'
+
 import Footer from './component/Footer/Footer'
-import Banner from './component/Banner/Banner';
-import Starter from './component/Starter/Starter';
-import Salads from './component/Salads/Salads';
-import Soups from './component/Soups/Soups';
-import Pasta from './component/Pasta/Pasta';
-import Pizza from './component/Pizza/Pizza';
-import Sandwiches from './component/Sandwiches/Sandwiches';
-import Dessert from './component/Dessert/Dessert';
-import Drink from './component/Drink/Drink';
-import Header3 from './component/Header/Header3';
+import Banner from './component/Banner/Banner'
+import Starter from './component/Starter/Starter'
+import Salads from './component/Salads/Salads'
+import Soups from './component/Soups/Soups'
+import Pasta from './component/Pasta/Pasta'
+import Pizza from './component/Pizza/Pizza'
+import Sandwiches from './component/Sandwiches/Sandwiches'
+import Dessert from './component/Dessert/Dessert'
+import Drink from './component/Drink/Drink'
+import Header3 from './component/Header/Header3'
 
 import Order from './component/Order/Order'
+import EachOrder from './component/EachOrder/EachOrder';
 
 export default class App extends Component {
 	render() {
@@ -33,7 +33,6 @@ export default class App extends Component {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/cashier" component={Cashier} />
-					<Route exact path="/chef" component={Chef} />
 
 					<Route exact path="/starter" component={Starter} />
 					<Route exact path="/salads" component={Salads} />
@@ -46,6 +45,7 @@ export default class App extends Component {
 					<Route exact path="/drink" component={Drink} />
 
 					<Route exact path="/order" component={Order} />
+					<Route exact path="/order/:id" component={EachOrder} />
 				</Switch>
 				<Footer />
 			</Router>

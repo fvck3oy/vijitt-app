@@ -4,7 +4,7 @@ import './Sandwiches.css'
 import griied_chicken_pesto_sandwiches from '../../picture/sandwiches/griied_chicken_pesto_sandwiches.jpg'
 
 export default class Grilled extends Component {
-    state = { menu_name: 'grilled_chicken_pesto_sandwiches', menu_value: 0, remark: '' }
+    state = { menu_name: 'grilled_chicken_pesto_sandwiches', menu_value: 0, remark: '' ,price:250}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -28,7 +28,7 @@ export default class Grilled extends Component {
             menu_name: this.state.menu_name,
             menu_value: this.state.menu_value,
             remark: this.state.remark,
-
+            price:this.state.price
             // lesson: this.state.tags.map($objTag => {
             // 	return { name: $objTag.name }
             // }),
