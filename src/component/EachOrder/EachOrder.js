@@ -28,7 +28,7 @@ export default class EachOrder extends Component {
 		this.getData()
 	}
 	getData = () => {
-		axios.get(`https://159.89.195.144:3013/vijitt-api/order/${this.props.match.params.id}`).then(res => {
+		axios.get(`http://159.89.195.144:3013/vijitt-api/order/${this.props.match.params.id}`).then(res => {
 			const { data } = res
 			console.log('from params : ', data)
 			this.setState({ order: data })
