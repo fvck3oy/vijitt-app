@@ -192,24 +192,24 @@ export default class CockTail extends Component {
 											>
 												<option value="">Please Select</option>
 
-												<option value="mojito_havana">Mojito Havana</option>
-												<option value="mojito_fresh_lamon">Mojito Fresh Lemon</option>
-												<option value="mojito_mint_leaf">Mojito Mint Leaf</option>
-												<option value="mojito_brown_sugar">Mojito Brown Sugar</option>
+												<option value="Mojito Havana">Mojito Havana</option>
+												<option value="Mojito Fresh Lemon">Mojito Fresh Lemon</option>
+												<option value="Mojito Mint Leaf">Mojito Mint Leaf</option>
+												<option value="Mojito Brown Sugar">Mojito Brown Sugar</option>
 
-												<option value="moscow_mule_vodka">Moscow Mule Vodka</option>
-												<option value="moscow_mule_fresh_ginger">Moscow Mule Fresh Lemon</option>
-												<option value="moscow_mule_lemon_wedge">Moscow MuleLemon Wedge</option>
-												<option value="moscow_mule_ginger_ale">Moscow Mule Ginger Ale</option>
+												<option value="Moscow Mule Vodka">Moscow Mule Vodka</option>
+												<option value="Moscow Mule Fresh Lemon">Moscow Mule Fresh Lemon</option>
+												<option value="Moscow MuleLemon Wedge">Moscow MuleLemon Wedge</option>
+												<option value="Moscow Mule Ginger Ale">Moscow Mule Ginger Ale</option>
 
-												<option value="chi_chi_vodka">Chi ChiVodka</option>
-												<option value="chi_chi_malibu">Chi Chi Malibu</option>
-												<option value="chi_chi_pineapple_juice">Chi Chi Pineapple Juice</option>
-												<option value="chi_chi_coconut_milk">Chi Chi Coconut Milk</option>
+												<option value="Chi Chi Vodka">Chi Chi Vodka</option>
+												<option value="Chi Chi Malibu">Chi Chi Malibu</option>
+												<option value="Chi Chi Pineapple Juice">Chi Chi Pineapple Juice</option>
+												<option value="Chi Chi Coconut Milkk">Chi Chi Coconut Milk</option>
 
-												<option value="gin_fizz_dry_gin">Gin Fizz Dry Gin</option>
-												<option value="gin_fizz_triple_sec">Gin Fizz Triple Sec</option>
-												<option value="gin_fizz_lemon_juice_and_soda">Gin Fizz Lemon Juice and Soda</option>
+												<option value="Gin Fizz Dry Gin">Gin Fizz Dry Gin</option>
+												<option value="Gin Fizz Triple Sec">Gin Fizz Triple Sec</option>
+												<option value="Gin Fizz Lemon Juice and Soda">Gin Fizz Lemon Juice and Soda</option>
 											</Input>
 										</FormGroup>
 										<div className="mb-2">

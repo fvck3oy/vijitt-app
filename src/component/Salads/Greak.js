@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Salads.css'
 import greek_salad from '../../picture/salads/greek_salad.jpg'
 export default class Greak extends Component {
-    state = { menu_name: 'greak_salad', menu_value: 0, remark: '',price:250 , please:''}
+    state = { menu_name: 'Greak Salad', menu_value: 0, remark: '',price:250 , please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

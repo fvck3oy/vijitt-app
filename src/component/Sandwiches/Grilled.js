@@ -4,7 +4,7 @@ import './Sandwiches.css'
 import griied_chicken_pesto_sandwiches from '../../picture/sandwiches/griied_chicken_pesto_sandwiches.jpg'
 
 export default class Grilled extends Component {
-    state = { menu_name: 'grilled_chicken_pesto_sandwiches', menu_value: 0, remark: '' ,price:250 , please:''}
+    state = { menu_name: 'Grilled Chicken Pesto Sandwiches', menu_value: 0, remark: '' ,price:250 , please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

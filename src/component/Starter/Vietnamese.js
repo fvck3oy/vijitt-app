@@ -4,7 +4,7 @@ import './Starter.css'
 
 import vietnamese_fresh_spring_rolls from '../../picture/starter/vietnamese_fresh_spring_rolls.jpg'
 export default class Vietnamese extends Component {
-    state = { menu_name: 'vietnamese_fresh_spring_rolls', menu_value: 0, remark: '',price:250 , please:''}
+    state = { menu_name: 'Vietnamese Fresh Spring Rolls', menu_value: 0, remark: '',price:250 , please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

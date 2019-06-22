@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pasta.css'
 import spaghetti_with_baby_squid from '../../picture/pasta/spaghetti_with_baby_squid.jpg'
 export default class Beef extends Component {
-    state = { menu_name: 'beef_pasta', menu_value: 0, remark: '',price:290 ,please:''}
+    state = { menu_name: 'Beef Pasta', menu_value: 0, remark: '',price:290 ,please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

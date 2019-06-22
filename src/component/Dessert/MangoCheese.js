@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Dessert.css'
 import mango_cheese_cake from '../../picture/dessert/mango_cheese_cake.jpg'
 export default class MangoCheese extends Component {
-    state = { menu_name: 'mango_cheese', menu_value: 0, remark: '',price:190 ,please:''}
+    state = { menu_name: 'Mango Cheese', menu_value: 0, remark: '',price:190 ,please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

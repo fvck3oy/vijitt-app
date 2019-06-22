@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Dessert.css'
 import cream_brulee from '../../picture/dessert/cream_brulee.jpg'
 export default class CremeBrulee extends Component {
-    state = { menu_name: 'creme_brulee', menu_value: 0, remark: '',price:190,please:'' }
+    state = { menu_name: 'Creme Brulee', menu_value: 0, remark: '',price:190,please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

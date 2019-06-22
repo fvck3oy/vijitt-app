@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pizza.css'
 import vegetarian_pizza from '../../picture/pizza/vegetarian_pizza.jpg'
 export default class Vegetarian extends Component {
-    state = { menu_name: 'vegetarian_pizza', menu_value: 0, remark: '',price:250,please:'' }
+    state = { menu_name: 'Vegetarian Pizza', menu_value: 0, remark: '',price:250,please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

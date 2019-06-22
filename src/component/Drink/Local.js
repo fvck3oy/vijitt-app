@@ -117,8 +117,8 @@ export default class Local extends Component {
 												required
 											>
 												<option value="">Please Select</option>
-												<option value="chang_beer">Chang Beer</option>
-												<option value="singha_beer">Singha Beer</option>
+												<option value="Chang Beer">Chang Beer</option>
+												<option value="Singha Beer">Singha Beer</option>
 											</Input>
 										</FormGroup>
 										<div className="mb-2">

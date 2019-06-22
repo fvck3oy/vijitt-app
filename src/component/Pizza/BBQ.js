@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pizza.css'
 import bbq_chicken_pizza from '../../picture/pizza/bbq_chicken_pizza.jpg'
 export default class BBQ extends Component {
-    state = { menu_name: 'bbq_pizza', menu_value: 0, remark: '',price:250 ,please:''}
+    state = { menu_name: 'BBQ Pizza', menu_value: 0, remark: '',price:250 ,please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

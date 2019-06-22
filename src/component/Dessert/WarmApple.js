@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Dessert.css'
 import warm_apple_pie from '../../picture/dessert/warm_apple_pie.jpg'
 export default class WarmApple extends Component {
-    state = { menu_name: 'warm_apple', menu_value: 0, remark: '',price:200,please:'' }
+    state = { menu_name: 'Warm Apple', menu_value: 0, remark: '',price:200,please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

@@ -18,36 +18,36 @@ export default class OfDay extends Component {
 
         if(today==='Sunday'){
             this.setState({ picToday: corn_soup})
-            this.setState({ menu_name: 'corn_soup'})
+            this.setState({ menu_name: 'Corn Soup'})
             console.log('to day is : ' , today);
         }else if(today==='Monday'){
             this.setState({ picToday: asparagus_soup})
-            this.setState({ menu_name: 'asparagus_soup'})
+            this.setState({ menu_name: 'Asparagus Soup'})
             console.log('to day is : ' , today);
         }
         else if(today==='Tuesday'){
             this.setState({ picToday: potato_soup })
-            this.setState({ menu_name: 'potato_soup'})
+            this.setState({ menu_name: 'Potato Soup'})
             console.log('to day is : ' , today);
         }
         else if(today==='Wednesday'){
             this.setState({ picToday:carrot_soup})
-            this.setState({ menu_name: 'carrot_soup'})
+            this.setState({ menu_name: 'Carrot Soup'})
             console.log('to day is : ' , today);
         }
         else if(today==='Thursday'){
             this.setState({ picToday: chicken_cream_soup})
-            this.setState({ menu_name: 'chicken_cream_soup'})
+            this.setState({ menu_name: 'Chicken Cream Soup'})
             console.log('to day is : ' , today);
         }
         else if(today==='Friday'){
             this.setState({ picToday: tomato_soup})
-            this.setState({ menu_name: ' tomato_soup'})
+            this.setState({ menu_name: ' Tomato Soup'})
             console.log('to day is : ' , today);
         }
         else{
             this.setState({ picToday: pumpkin_soup})
-            this.setState({ menu_name: 'pumpkin_soup'})
+            this.setState({ menu_name: 'Pumpkin Soup'})
             console.log('to day is : ' , today);
         }
 

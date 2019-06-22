@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Sandwiches.css'
 import the_vijitt_club_sandwiches from '../../picture/sandwiches/the_vijitt_club_sandwiches.jpg'
 export default class Club extends Component {
-    state = { menu_name: 'club_sandwiches', menu_value: 0, remark: '',price:250 ,please:'' }
+    state = { menu_name: 'Club Sandwiches', menu_value: 0, remark: '',price:250 ,please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

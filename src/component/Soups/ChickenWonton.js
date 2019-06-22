@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Soups.css'
 import chicken_wonton_soup from '../../picture/soups/chicken_wonton_soup.jpg'
 export default class ChickenWonton extends Component {
-    state = { menu_name: 'chicken_wonton_soup', menu_value: 0, remark: '',price:200 , please:'' }
+    state = { menu_name: 'Chicken Wonton Soup', menu_value: 0, remark: '',price:200 , please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

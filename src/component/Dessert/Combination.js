@@ -4,7 +4,7 @@ import './Dessert.css'
 import the_vijitt_combination from '../../picture/dessert/the_vijitt_combination.jpg'
 
 export default class Combination extends Component {
-    state = { menu_name: 'combination_miniature_desserts_for_two', menu_value: 0, remark: '' ,price:290 ,please:''}
+    state = { menu_name: 'Combination Miniature Desserts For Two', menu_value: 0, remark: '' ,price:290 ,please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

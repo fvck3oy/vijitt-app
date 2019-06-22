@@ -117,10 +117,10 @@ export default class Milk extends Component {
 												required
 											>
 												<option value="">Please Select</option>
-												<option value="banana">Banana</option>
-												<option value="chocolate">Chocolate</option>
-												<option value="strawberry">Strawberry</option>
-												<option value="vanilla">Vanilla</option>
+												<option value="Banana">Banana</option>
+												<option value="Chocolate">Chocolate</option>
+												<option value="Strawberry">Strawberry</option>
+												<option value="Vanilla">Vanilla</option>
 											</Input>
 										</FormGroup>
 

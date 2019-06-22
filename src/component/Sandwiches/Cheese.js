@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Sandwiches.css'
 import the_vijitt_cheese_burger from '../../picture/sandwiches/the_vijitt_cheese_burger.jpg'
 export default class Cheese extends Component {
-    state = { menu_name: 'cheese_burger', menu_value: 0, remark: '' ,price:290 , please:''}
+    state = { menu_name: 'Cheese Burger', menu_value: 0, remark: '' ,price:290 , please:''}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

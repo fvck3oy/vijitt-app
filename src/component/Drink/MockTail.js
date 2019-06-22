@@ -178,22 +178,22 @@ export default class MockTail extends Component {
 											required
 										>
 											<option value="">Please Select</option>
-											<option value="the_vijitt_sunrise_orange_juice">The Vijitt Sunrise Orange Juice</option>
-											<option value="the_vijitt_sunrise_pineapple_juice">The Vijitt Sunrise Pineapple Juice</option>
-											<option value="the_vijitt_sunrise_mango_juice">The Vijitt Sunrise Mango Juice</option>
+											<option value="The Vijitt Sunrise Orange Juice">The Vijitt Sunrise Orange Juice</option>
+											<option value="The Vijitt Sunrise Pineapple Juice">The Vijitt Sunrise Pineapple Juice</option>
+											<option value="The Vijitt Sunrise Mango Juice">The Vijitt Sunrise Mango Juice</option>
 
-											<option value="coco_colada_pineapple_juice">Coco Colada Pineapple Juice</option>
-											<option value="coco_colada_mango_juice">Coco Colada Mango Juice</option>
-											<option value="coco_colada_coconut_juice">Coco Colada Coconut Juice</option>
+											<option value="Coco Colada Pineapple Juice">Coco Colada Pineapple Juice</option>
+											<option value="Coco Colada Mango Juice">Coco Colada Mango Juice</option>
+											<option value="Coco Colada Coconut Juice">Coco Colada Coconut Juice</option>
 
-											<option value="virgin_mojito_fresh_lemon">Virgir Mojito Fresh Lemon</option>
-											<option value="virgin_mojito_brown_sugar">Virgir Mojito Brown Sugar</option>
-											<option value="virgin_mojito_mint_leaf">Virgir Mojito Mint Leaf</option>
+											<option value="Virgir Mojito Fresh Lemon">Virgir Mojito Fresh Lemon</option>
+											<option value="Virgir Mojito Brown Sugar">Virgir Mojito Brown Sugar</option>
+											<option value="Virgir Mojito Mint Leaf">Virgir Mojito Mint Leaf</option>
 
-											<option value="honey_kiss_ginger_natural_honey">Honey Kiss Ginger Natural Honey</option>
-											<option value="honey_kiss_ginger_fresh_ginger">Honey Kiss Ginger Fresh Ginger</option>
-											<option value="honey_kiss_ginger_lemon">Honey Kiss Ginger Lemon</option>
-											<option value="honey_kiss_ginger_mint_leaf_and_ginger_ale">Honey Kiss Ginger Mint Leaf and Ginger ale</option>
+											<option value="Honey Kiss Ginger Natural Honey">Honey Kiss Ginger Natural Honey</option>
+											<option value="Honey Kiss Ginger Fresh Ginge">Honey Kiss Ginger Fresh Ginger</option>
+											<option value="Honey Kiss Ginger Lemon">Honey Kiss Ginger Lemon</option>
+											<option value="Honey Kiss Ginger Mint Leaf and Ginger Ale">Honey Kiss Ginger Mint Leaf and Ginger Ale</option>
 										</Input>
 									</FormGroup>
 

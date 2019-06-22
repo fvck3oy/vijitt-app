@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Starter.css'
 import prawn_tempura from '../../picture/starter/prawn_tempura.jpg'
 export default class Prawn extends Component {
-    state = { menu_name: 'prawn_tempura', menu_value: 0, remark: '', price: 250 , please:'' }
+    state = { menu_name: 'Prawn Tempura', menu_value: 0, remark: '', price: 250 , please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 

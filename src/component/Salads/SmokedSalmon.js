@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Salads.css'
 import smoked_salman_salad from '../../picture/salads/smoked_salman_salad.jpg'
 export default class SmokedSalmon extends Component {
-    state = { menu_name: 'smoke_salmon_salad', menu_value: 0, remark: '',price:250 , please:'' }
+    state = { menu_name: 'Smoke Salmon Salad', menu_value: 0, remark: '',price:250 , please:'' }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
