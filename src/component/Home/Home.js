@@ -27,13 +27,15 @@ export default class Home extends Component {
 	componentDidMount() {
 		document.title = 'THE VIJITT RESORT PHUKET'
 		// var oldItems = []
-		var oldItems = JSON.parse(localStorage.getItem('order')) || []
-		if (oldItems !== null) {
-			
-		} else {
+		var oldItems = JSON.parse(localStorage.getItem('order'))
+		console.log('old first :',oldItems
+		);
+		
+		if (oldItems == null) {
 			var oldItems = []
-
 			localStorage.setItem('order', JSON.stringify(oldItems))
+		} else {
+			var oldItems = JSON.parse(localStorage.getItem('order')) || []
 		}
 		// var oldItems = JSON.parse(localStorage.getItem('order')) || [];
 	}
