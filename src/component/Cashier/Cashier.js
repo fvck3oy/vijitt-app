@@ -34,7 +34,7 @@ export default class Cashier extends Component {
 	}
 
 	getData = () => {
-		axios.get(`http://localhost:3013/vijitt-api/eachorder`).then(res => {
+		axios.get(`https://159.89.195.144:3013/vijitt-api/eachorder`).then(res => {
 			const { data } = res
 			console.log(data)
 			this.setState({ order: data })
