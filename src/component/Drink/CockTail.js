@@ -19,7 +19,7 @@ import './Drink.css'
 import cocktail from '../../picture/drink/cocktail.jpg'
 
 export default class CockTail extends Component {
-	state = { menu_name: '', menu_value: 0, remark: '', price: 250 }
+	state = { menu_name: '', menu_value: 1, remark: '', price: 250 }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
@@ -55,8 +55,8 @@ export default class CockTail extends Component {
 	}
 
 	minus = () => {
-		if (this.state.menu_value <= 0) {
-			this.setState({ menu_value: 0 })
+		if (this.state.menu_value <= 1) {
+			this.setState({ menu_value: 1 })
 		} else {
 			this.setState({ menu_value: this.state.menu_value - 1 })
 		}

@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Soups.css'
 import chicken_wonton_soup from '../../picture/soups/chicken_wonton_soup.jpg'
 export default class ChickenWonton extends Component {
-    state = { menu_name: 'chicken_wonton_soup', menu_value: 0, remark: '',price:200 }
+    state = { menu_name: 'chicken_wonton_soup', menu_value: 1, remark: '',price:200 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -46,7 +46,7 @@ export default class ChickenWonton extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pasta.css'
 import beef_stroganoff from '../../picture/pasta/beef_stroganoff.jpg'
 export default class Spaghetti extends Component {
-    state = { menu_name: 'spaghetti_pasta', menu_value: 0, remark: '',price:290 }
+    state = { menu_name: 'spaghetti_pasta', menu_value: 1, remark: '',price:290 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -45,7 +45,7 @@ export default class Spaghetti extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

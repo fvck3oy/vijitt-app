@@ -11,7 +11,7 @@ import potato_soup from '../../picture/soups/potato_soup.jpg'
 import pumpkin_soup from '../../picture/soups/pumpkin_soup .jpg'
 export default class OfDay extends Component {
     state = {
-        toDay: '',picToday:'',menu_name: '', menu_value: 0, remark: '', price:230    }
+        toDay: '',picToday:'',menu_name: '', menu_value: 1, remark: '', price:230    }
     componentDidMount = () => {
         var today = moment().format('dddd');
         this.setState({toDay : today})
@@ -100,7 +100,7 @@ export default class OfDay extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

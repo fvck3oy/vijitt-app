@@ -4,7 +4,7 @@ import './Dessert.css'
 import the_vijitt_combination from '../../picture/dessert/the_vijitt_combination.jpg'
 
 export default class Combination extends Component {
-    state = { menu_name: 'combination_miniature_desserts_for_two', menu_value: 0, remark: '' ,price:290}
+    state = { menu_name: 'combination_miniature_desserts_for_two', menu_value: 1, remark: '' ,price:290}
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -46,7 +46,7 @@ export default class Combination extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

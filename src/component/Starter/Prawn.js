@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Starter.css'
 import prawn_tempura from '../../picture/starter/prawn_tempura.jpg'
 export default class Prawn extends Component {
-    state = { menu_name: 'prawn_tempura', menu_value: 0, remark: '',price:250 }
+    state = { menu_name: 'prawn_tempura', menu_value: 1, remark: '',price:250 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -46,7 +46,7 @@ export default class Prawn extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

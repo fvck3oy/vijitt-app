@@ -20,7 +20,7 @@ import './Drink.css'
 import local_beer from '../../picture/drink/local_beer.jpeg'
 
 export default class Local extends Component {
-	state = { menu_name: '', menu_value: 0, remark: '', price: 130 }
+	state = { menu_name: '', menu_value: 1, remark: '', price: 130 }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
@@ -56,8 +56,8 @@ export default class Local extends Component {
 	}
 
 	minus = () => {
-		if (this.state.menu_value <= 0) {
-			this.setState({ menu_value: 0 })
+		if (this.state.menu_value <= 1) {
+			this.setState({ menu_value: 1 })
 		} else {
 			this.setState({ menu_value: this.state.menu_value - 1 })
 		}

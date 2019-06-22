@@ -18,7 +18,7 @@ import {
 import './Starter.css'
 import tuna_sashimi from '../../picture/starter/tuna_sashimi.jpg'
 export default class Tuna extends Component {
-	state = { menu_name: 'tuna_sashimi', menu_value: 0, remark: '', price:250 }
+	state = { menu_name: 'tuna_sashimi', menu_value: 1, remark: '', price:250 }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
@@ -53,8 +53,8 @@ export default class Tuna extends Component {
 	}
 
 	minus = () => {
-		if (this.state.menu_value <= 0) {
-			this.setState({ menu_value: 0 })
+		if (this.state.menu_value <= 1) {
+			this.setState({ menu_value: 1 })
 		} else {
 			this.setState({ menu_value: this.state.menu_value - 1 })
 		}

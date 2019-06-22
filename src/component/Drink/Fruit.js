@@ -20,7 +20,7 @@ import './Drink.css'
 import fruit_juice from '../../picture/drink/fruit_juice.jpg'
 
 export default class Fruit extends Component {
-	state = { menu_name: '', menu_value: 0, remark: '', price: 150 }
+	state = { menu_name: '', menu_value: 1, remark: '', price: 150 }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
@@ -55,8 +55,8 @@ export default class Fruit extends Component {
 	}
 
 	minus = () => {
-		if (this.state.menu_value <= 0) {
-			this.setState({ menu_value: 0 })
+		if (this.state.menu_value <= 1) {
+			this.setState({ menu_value: 1 })
 		} else {
 			this.setState({ menu_value: this.state.menu_value - 1 })
 		}

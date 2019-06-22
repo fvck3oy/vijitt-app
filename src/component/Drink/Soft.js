@@ -19,32 +19,28 @@ import './Drink.css'
 
 import soft_drink from '../../picture/drink/soft_drink.jpg'
 export default class Soft extends Component {
-	state = { menu_name: '', menu_value: 0, remark: '', price: 0 }
+	state = { menu_name: '', menu_value: 1, remark: '', price: 0 }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
 
 	handleInputChange = e => {
 		const { name, value } = e.target
-		this.setState({ [name]: value })
-		this.setState({ message: '' })
-		console.log({ [name]: value })
-	}
 
-	sentOrder = e => {
-		if (
-			this.state.menu_name === 'Coke' ||
-			this.state.menu_name === 'Sprite' ||
-			this.state.menu_name === 'Soda Water' ||
-			this.state.menu_name === 'Fanta'
-		) {
+		this.setState({ [name]: value })
+		if (value === 'Coke' || value === 'Sprite' || value === 'Soda Water' || value === 'Fanta') {
 			this.setState({ price: 80 })
 		} else {
 			this.setState({ price: 90 })
 		}
+		console.log({ [name]: value })
+	}
+
+	sentOrder = e => {
 		var oldItems = JSON.parse(localStorage.getItem('order')) || []
 		console.log('')
 		e.preventDefault()
+
 		const newData = {
 			// id: this.state.id,
 			menu_name: this.state.menu_name,
@@ -64,16 +60,16 @@ export default class Soft extends Component {
 	}
 
 	minus = () => {
-		if (this.state.menu_value <= 0) {
-			this.setState({ menu_value: 0 })
+		if (this.state.menu_value <= 1) {
+			this.setState({ menu_value: 1 })
 		} else {
 			this.setState({ menu_value: this.state.menu_value - 1 })
 		}
-		console.log('value : ', this.state.menu_value)
+		console.log('value minus : ', this.state.menu_value)
 	}
 	plus = () => {
 		this.setState({ menu_value: this.state.menu_value + 1 })
-		console.log('value2 : ', this.state.menu_value)
+		console.log('value plus : ', this.state.menu_value)
 	}
 	render() {
 		return (
@@ -141,6 +137,7 @@ export default class Soft extends Component {
 												<option value="Sprite">Sprite</option>
 												<option value="Soda Water">Soda Water</option>
 												<option value="Fanta">Fanta</option>
+
 												<option value="Ginger Ale">Ginger Ale</option>
 												<option value="Tonic Water">Tonic Water</option>
 												<option value="Coke Light">Coke Light</option>

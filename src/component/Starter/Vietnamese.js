@@ -4,7 +4,7 @@ import './Starter.css'
 
 import vietnamese_fresh_spring_rolls from '../../picture/starter/vietnamese_fresh_spring_rolls.jpg'
 export default class Vietnamese extends Component {
-    state = { menu_name: 'vietnamese_fresh_spring_rolls', menu_value: 0, remark: '',price:250 }
+    state = { menu_name: 'vietnamese_fresh_spring_rolls', menu_value: 1, remark: '',price:250 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -47,7 +47,7 @@ export default class Vietnamese extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 

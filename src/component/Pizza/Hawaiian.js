@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTit
 import './Pizza.css'
 import hawaiian_pizza from '../../picture/pizza/hawaiian_pizza.jpg'
 export default class Hawaiian extends Component {
-    state = { menu_name: 'hawaiian_pizza', menu_value: 0, remark: '',price:250 }
+    state = { menu_name: 'hawaiian_pizza', menu_value: 1, remark: '',price:250 }
     componentDidMount = () => {
         // localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 
@@ -45,7 +45,7 @@ export default class Hawaiian extends Component {
 
     minus = () => {
         
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
+        if (this.state.menu_value <= 1) { this.setState({ menu_value: 1 }) }
         else { this.setState({ menu_value: this.state.menu_value - 1 }) }
         console.log('value : ', this.state.menu_value);
 
