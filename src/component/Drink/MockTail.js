@@ -20,64 +20,60 @@ import './Drink.css'
 import mocktail from '../../picture/drink/mocktail.jpg'
 
 export default class MockTail extends Component {
-	state = { menu_name: '', menu_value: 0, remark: '', price: 170 ,please:''}
+	state = { menu_name: '', menu_value: 0, remark: '', price: 170, please: '' }
 	componentDidMount = () => {
 		// localStorage.setItem("order", JSON.stringify([{ name: 'kuy', age: 50 }]));
 	}
 	handleInputChange = e => {
-        const { name, value } = e.target
-        this.setState({ [name]: value })
-        this.setState({ please: '' })
-        console.log({ [name]: value })
-    }
+		const { name, value } = e.target
+		this.setState({ [name]: value })
+		this.setState({ please: '' })
+		console.log({ [name]: value })
+	}
 
-    sentOrder = (e) => {
-        e.preventDefault()
-        if(this.state.menu_value>=1){
-            var oldItems = JSON.parse(localStorage.getItem('order')) || [];
+	sentOrder = e => {
+		e.preventDefault()
+		if (this.state.menu_value >= 1) {
+			var oldItems = JSON.parse(localStorage.getItem('order')) || []
 
-            console.log('');
-            
-            const newData = {
-                // id: this.state.id,
-                menu_name: this.state.menu_name,
-                menu_value: this.state.menu_value,
-                remark: this.state.remark,
-                price: this.state.price
-    
-                // lesson: this.state.tags.map($objTag => {
-                // 	return { name: $objTag.name }
-                // }),
-    
-            }
-            oldItems.push(newData);
-            localStorage.setItem('order', JSON.stringify(oldItems));
-            console.log(' data : ', newData);
+			console.log('')
+
+			const newData = {
+				// id: this.state.id,
+				menu_name: this.state.menu_name,
+				menu_value: this.state.menu_value,
+				remark: this.state.remark,
+				price: this.state.price
+
+				// lesson: this.state.tags.map($objTag => {
+				// 	return { name: $objTag.name }
+				// }),
+			}
+			oldItems.push(newData)
+			localStorage.setItem('order', JSON.stringify(oldItems))
+			console.log(' data : ', newData)
 			this.setState({ menu_value: 0 })
 			this.setState({ menu_name: '' })
-            this.setState({ remark: '' })
-        }else{
-                    this.setState({ please:'please add amount'})
-        }
-       
-    }
+			this.setState({ remark: '' })
+		} else {
+			this.setState({ please: 'please add amount' })
+		}
+	}
 
-
-
-
-    minus = () => {
-
-        if (this.state.menu_value <= 0) { this.setState({ menu_value: 0 }) }
-        else { this.setState({ menu_value: this.state.menu_value - 1 }) }
-        console.log('value : ', this.state.menu_value);
-        this.setState({ please: '' })
-    }
-    plus = () => {
-
-        this.setState({ menu_value: this.state.menu_value + 1 })
-        console.log('value2 : ', this.state.menu_value);
-        this.setState({ please: '' })
-    }
+	minus = () => {
+		if (this.state.menu_value <= 0) {
+			this.setState({ menu_value: 0 })
+		} else {
+			this.setState({ menu_value: this.state.menu_value - 1 })
+		}
+		console.log('value : ', this.state.menu_value)
+		this.setState({ please: '' })
+	}
+	plus = () => {
+		this.setState({ menu_value: this.state.menu_value + 1 })
+		console.log('value2 : ', this.state.menu_value)
+		this.setState({ please: '' })
+	}
 	render() {
 		return (
 			<div>
@@ -93,75 +89,29 @@ export default class MockTail extends Component {
 						<div className="d-flex detail-each-menu">
 							<div style={{ fontWeight: 'bold', fontSize: 24 }}>Mocktails非酒精鸡尾酒</div>
 							<div style={{ fontWeight: 'bold', marginTop: 30 }}>The Vijitt Sunrise</div>
-
 							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Orange juice </div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice</div>
+								<div className="d-flex mr-auto p-2 bd-highlight align-items-center"> Orange juice , Pineapple juice , Mango juice</div>
 								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
 							</div>
 
 							<div style={{ fontWeight: 'bold', marginTop: 30 }}>Coco Colada</div>
-
 							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Pineapple juice</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mango juice</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Coconut milk</div>
+								<div className="d-flex mr-auto p-2 bd-highlight align-items-center"> Pineapple Juice , Mango juice , Coconut Milk</div>
 								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
 							</div>
 
 							<div style={{ fontWeight: 'bold', marginTop: 30 }}>Virgin Mojito</div>
-
 							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh lemon</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Brown sugar</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf</div>
+								<div className="d-flex mr-auto p-2 bd-highlight align-items-center"> Fresh Lemon , Brown Sugar , Mint Leaf</div>
 								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
 							</div>
 
 							<div style={{ fontWeight: 'bold', marginTop: 30 }}>Honey Kiss Ginger</div>
-
 							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Natural Honey</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Fresh Ginger</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Lemon</div>
-								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
-							</div>
-
-							<div className="d-flex bd-highlight mt-2 mb-2">
-								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">Mint leaf and Ginger ale</div>
+								<div className="d-flex mr-auto p-2 bd-highlight align-items-center">
+									{' '}
+									Natural Honey , Fresh Ginger , Lemon Mint leaf and Ginger ale
+								</div>
 								<div className="d-flex p-2 bd-highlight  align-items-center">THB 170</div>
 							</div>
 
@@ -178,30 +128,13 @@ export default class MockTail extends Component {
 											required
 										>
 											<option value="">Please Select</option>
-											<option value="The Vijitt Sunrise Orange Juice">The Vijitt Sunrise Orange Juice</option>
-											<option value="The Vijitt Sunrise Pineapple Juice">The Vijitt Sunrise Pineapple Juice</option>
-											<option value="The Vijitt Sunrise Mango Juice">The Vijitt Sunrise Mango Juice</option>
-
-											<option value="Coco Colada Pineapple Juice">Coco Colada Pineapple Juice</option>
-											<option value="Coco Colada Mango Juice">Coco Colada Mango Juice</option>
-											<option value="Coco Colada Coconut Juice">Coco Colada Coconut Juice</option>
-
-											<option value="Virgir Mojito Fresh Lemon">Virgir Mojito Fresh Lemon</option>
-											<option value="Virgir Mojito Brown Sugar">Virgir Mojito Brown Sugar</option>
-											<option value="Virgir Mojito Mint Leaf">Virgir Mojito Mint Leaf</option>
-
-											<option value="Honey Kiss Ginger Natural Honey">Honey Kiss Ginger Natural Honey</option>
-											<option value="Honey Kiss Ginger Fresh Ginge">Honey Kiss Ginger Fresh Ginger</option>
-											<option value="Honey Kiss Ginger Lemon">Honey Kiss Ginger Lemon</option>
-											<option value="Honey Kiss Ginger Mint Leaf and Ginger Ale">Honey Kiss Ginger Mint Leaf and Ginger Ale</option>
+											<option value="The Vijitt Sunrise">The Vijitt Sunrise</option>
+											<option value="Coco Colada">Coco Colada</option>
+											<option value="Virgin Mojito">Virgin Mojito</option>
+											<option value="Honey Kiss Ginger">Honey Kiss Ginger</option>
 										</Input>
 									</FormGroup>
 
-									{/* <div className="d-flex mb-2">
-                                            <div onClick={this.minus} className="btn-value"><i className="fas fa-minus"></i></div>
-                                            <div className="d-flex mr-3 ml-3 justify-content-center align-items-center"> {this.state.menu_value} </div>
-                                            <div onClick={this.plus} className="btn-value"><i className="fas fa-plus"></i></div>
-                                        </div> */}
 									<div className="mb-2">
 										<button type="button" className="btn-value mr-2" onClick={this.minus}>
 											<i className="fas fa-minus" />
@@ -211,7 +144,7 @@ export default class MockTail extends Component {
 											<i className="fas fa-plus" />
 										</button>
 									</div>
-									<div style={{ color:'red'}}>{this.state.please}</div>
+									<div style={{ color: 'red' }}>{this.state.please}</div>
 									<FormGroup>
 										Remark{' '}
 										<Input type="text" name="remark" value={this.state.remark} placeholder="remark" onChange={this.handleInputChange} />
