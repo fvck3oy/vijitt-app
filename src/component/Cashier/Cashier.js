@@ -18,30 +18,53 @@ import {
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Howl, Howler } from 'howler'
+
+const sound = new Howl({
+	src: ['https://actions.google.com/sounds/v1/alarms/beep_short.ogg']
+})
+
 export default class Cashier extends Component {
-	state = { order: [] }
+	state = { order: [], intervalId: '', old: [] }
 	componentDidMount = () => {
-		// const value = prompt('Please enter your password')
-		// if (value === 'kuy') {
-		// 	console.log('true')
-		// 	this.getData()
-		// } else {
-		// 	console.log('false')
-		// 	alert('Your Password Wrong !')
-		// 	this.props.history.push('/')
-		// }
-		this.getData()
+		var intervalId = setInterval(this.getData, 2000)
+		this.setState({ intervalId: intervalId })
+		// this.getData()
+		// sound.play()
 	}
 
 	getData = () => {
 		axios.get(`http://159.89.195.144:3013/vijitt-api/eachorder`).then(res => {
 			const { data } = res
-			console.log(data)
+			console.log('getData ', data)
+			this.setState({ old: data })
 			this.setState({ order: data })
 		})
 	}
+	Checked = id => {
+		console.log('id : ', id)
+
+		const data = {
+			id: id,
+			checked: true
+		}
+		axios.patch(`http://159.89.195.144:3013/vijitt-api/eachorder/update`, data).then(res => {
+			const { data } = res
+		})
+	}
+	Stop = () => {
+		console.log('Stop !')
+		const { order } = this.state
+		this.setState({ new: order })
+	}
 	renderTableHeader() {
 		return this.state.order.map((e, index) => {
+			if (e.isChecked===false) {
+				console.log('more ! ')
+				sound.play()
+			} else {
+				console.log('less')
+			}
 			return (
 				<tr key={index + 1}>
 					<th scope="row">{index + 1}</th>
@@ -52,9 +75,16 @@ export default class Cashier extends Component {
 						{' '}
 						<Link to={`/order/${e.id}`}>
 							<Button type="button" color="primary">
-							<i className="fas fa-search"/>
+								<i className="fas fa-search" />
 							</Button>
 						</Link>
+					</td>
+					<td>
+						{!e.isChecked && (
+							<Button onClick={() => this.Checked(e.id)} type="button" color="danger">
+								<i className="fas fa-bell-slash" />
+							</Button>
+						)}
 					</td>
 				</tr>
 			)
@@ -85,6 +115,7 @@ export default class Cashier extends Component {
 												<th>No.</th>
 												<th style={{ textAlign: 'center' }}>Username</th>
 												<th style={{ textAlign: 'center' }}>Room</th>
+												<th>{''}</th>
 												<th>{''}</th>
 											</tr>
 										</thead>
