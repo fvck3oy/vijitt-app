@@ -43,7 +43,7 @@ export default class HeaderComponent extends Component {
 		return (
 			<div className="header">
 				<Navbar light expand="md">
-					<NavbarBrand href="/" className="ml-5"><img src="https://www.vijittresort.com/images/vijittresort-logo.png" alt="logo" width="100px" /></NavbarBrand>
+					<NavbarBrand href="/" className="ml-5"><img src="https://www.vijittresort.com/wp-content/themes/vijittresort/images/vijittresort-logo.png" alt="logo" width="100px" /></NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="" navbar>

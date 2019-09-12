@@ -34,7 +34,7 @@ export default class Cashier extends Component {
 	}
 
 	getData = () => {
-		axios.get(`http://159.89.195.144:3013/vijitt-api/eachorder`).then(res => {
+		axios.get(`http://178.128.31.204:3013/vijitt-api/eachorder`).then(res => {
 			const { data } = res
 			console.log('getData ', data)
 			this.setState({ old: data })
@@ -48,7 +48,7 @@ export default class Cashier extends Component {
 			id: id,
 			checked: true
 		}
-		axios.patch(`http://159.89.195.144:3013/vijitt-api/eachorder/update`, data).then(res => {
+		axios.patch(`http://178.128.31.204:3013/vijitt-api/eachorder/update`, data).then(res => {
 			const { data } = res
 		})
 	}
@@ -59,7 +59,7 @@ export default class Cashier extends Component {
 	}
 	renderTableHeader() {
 		return this.state.order.map((e, index) => {
-			if (e.isChecked===false) {
+			if (e.isChecked === false) {
 				console.log('more ! ')
 				sound.play()
 			} else {

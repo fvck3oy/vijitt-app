@@ -21,7 +21,7 @@ export default class Header2 extends Component {
             <div className="header">
                 <div className="d-flex" style={{ color: '#c89861' }}>
                     <div className="logo">
-                        <img src="https://www.vijittresort.com/images/vijittresort-logo.png" alt="logo" width="200px" className="img-fluid" />
+                        <img src="https://www.vijittresort.com/wp-content/themes/vijittresort/images/vijittresort-logo.png" alt="logo" width="200px" className="img-fluid" />
                     </div>
 
                     <div className="d-flex m-auto ">

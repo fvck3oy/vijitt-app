@@ -60,7 +60,7 @@ export default class Order extends Component {
 		}
 		console.log('is : ', data)
 		axios
-			.post(`http://159.89.195.144:3013/vijitt-api/order`, data)
+			.post(`http://178.128.31.204:3013/vijitt-api/order`, data)
 			.then(res => {
 				const { data } = res
 			})
